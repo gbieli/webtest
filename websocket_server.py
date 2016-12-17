@@ -2,6 +2,8 @@ import asyncio
 import websockets
 import sqlite3
 
+#http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
+
 async def sendNames(websocket, path):
     conn = sqlite3.connect("test.db")
     c = conn.cursor()

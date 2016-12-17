@@ -2,9 +2,6 @@ import sqlite3
 import http.server
 import socketserver
 
-
-#http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
-
 conn = sqlite3.connect("test.db")
 
 c = conn.cursor()
