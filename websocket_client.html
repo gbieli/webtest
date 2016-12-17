@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function websocket(){
+            var ws = new WebSocket("ws://10.10.10.5:5678/"),
+                messages = document.createElement('table');
+            ws.onmessage = function (event) {
+                var messages = document.getElementsByTagName('table')[0],
+                    message = document.createElement('tr'),
+                    message = document.createElement('td'),
+                    content = document.createTextNode(event.data);
+                message.appendChild(content);
+                messages.appendChild(message);
+            };
+            document.body.appendChild(messages);
+        }
+        </script>
+<button onclick="websocket()">test</button>
+</body>
+</html>
