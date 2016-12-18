@@ -7,7 +7,7 @@
 <body>
     <script>
         function websocket(){
-            var ws = new WebSocket("ws://10.10.10.5:5678/"),
+            var ws = new WebSocket("ws://10.10.10.5:5678/getNames"),
                 messages = document.createElement('table');
             ws.onmessage = function (event) {
                 var messages = document.getElementsByTagName('table')[0],

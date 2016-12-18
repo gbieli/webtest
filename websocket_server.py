@@ -3,6 +3,7 @@ import websockets
 import sqlite3
 
 async def sendNames(websocket, path):
+    print(path)
     conn = sqlite3.connect("test.db")
     c = conn.cursor()
     # c.execute("CREATE TABLE person (firstname text, lastname text)")
