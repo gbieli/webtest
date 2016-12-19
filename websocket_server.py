@@ -4,7 +4,7 @@ import sqlite3
 
 #http://docs.sqlalchemy.org/en/latest/orm/tutorial.html
 
-async def sendNames(websocket, path):
+async def sendNamesHandler(websocket, path):
     print(path)
     conn = sqlite3.connect("test.db")
     c = conn.cursor()
@@ -18,7 +18,7 @@ async def sendNames(websocket, path):
             await websocket.send(d)
     conn.close()
 
-start_server = websockets.serve(sendNames, '10.10.10.5', 5678)
+start_server = websockets.serve(sendNamesHandler, '10.10.10.5', 5678)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
